@@ -11,6 +11,7 @@ decorator==4.3.2
 Faker==1.0.2
 Flask==1.0.2
 Flask-Compress==1.4.0
+gunicorn==19.9.0
 idna==2.8
 ipython-genutils==0.2.0
 itsdangerous==1.1.0
