@@ -10,10 +10,13 @@ This project is based upon my previous space occupancy data analysis projects fo
 
 ## Improvements to be implemented
 - [ ] a production version of a fake data generator
- - [ ] a customizable data generator (a user can enter the name / type of a building, a number of spaces within the building, names of the spaces, their maximum capacities)
- - [ ] a randomized data corruption mechanism (to generate more realistic datasets)
+      - [ ] a customizable data generator (a user can enter the name / type of a building, a number of spaces within the building, names of the spaces, their maximum capacities)
+      - [ ] a randomized data corruption mechanism (to generate more realistic datasets)
 - [ ] a fully-functioning pipeline: data generator (in development) -> data cleaning app (in development)-> a Dash app
+
 - [ ] 'Update data' button generating a new dataset
-- [ ] dataset preview functionality (Dash Table)
-- [ ] Insights about Missing data (dynamically rendered depending upon user's selections)
-- [ ] Flask app wrapping the dash app (login window, contact form)
+- [ ] dataset preview functionality (Dash Table displaying the head of a dataset) (in the Dash App)
+- [ ] Insights about the dataset (in the Dash App)
+- [ ] Insights about Missing data (dynamically rendered depending upon user's selections in the Dash App)
+
+- [ ] a Flask app wrapping the dash app (login window, contact form)
