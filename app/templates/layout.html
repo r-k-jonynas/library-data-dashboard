@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {% if title %}
+        <title>{{ title }} - Space Occupancy Dashboards</title>
+        {% else %}
+        <title>Space Occupancy Dashboards</title>
+        {% endif %}
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600' rel='stylesheet'>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu"
+    crossorigin="anonymous">
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <h1 class="title">Interactive Space Occupancy Data Visualizations </h1>
+      </div>
+    </header>
+
+      <!-- Occupancy Visualizations: -->
+       <nav class="nav justify-content-center">
+            <a class="nav-link active" href="{{ url_for('main.index') }}">Home</a>
+            <a class="nav-link active" href="/dashboard1/">Standard App</a>
+            <a class="nav-link active" href="{{ url_for('main.login') }}">Login</a>
+            <a class="nav-link active" href="{{ url_for('main.logout') }}">Logout</a>
+            {% if current_user %}
+            <a class="nav-link disabled" href="">Hi, {{ current_user.username }}</a>
+            {% endif %}
+        </nav>
+
+    <hr>
+           {% with messages = get_flashed_messages() %}
+           {% if messages %}
+           <ul>
+               {% for message in messages %}
+               <li>{{ message }}</li>
+               {% endfor %}
+           </ul>
+           {% endif %}
+           {% endwith %}
+</hr>
+    {% block content %}
+    {% endblock %}
+
+  </body>
+</html>
