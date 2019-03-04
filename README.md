@@ -15,6 +15,39 @@ If you'd like to see all the production code or have any questions, send me an e
 - Flask-Login (for authentication, authorization, user management).
 - SQLAlchemy (ORM for SQLite user database.)
 
+## History of the project:
+
+<table>
+<thead>
+<tr>
+<th>Version</th>
+<th>Libraries added / taken down</th>
+<th>Project state</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> v1.0 </td>
+<td> + Dash & Pandas</td>
+<td> Standalone Dash App</td>
+</tr>
+<tr>
+<td> prototyping stage </td>
+<td> experiments with Werkzeug(server) & Flask (homepage)</td>
+<td> Flask app for homepage, Dash Apps at their endpoints; all tied together by Werkzeug's `DispatcherMiddleware`</td>
+</tr>
+<tr>
+<td> v2.0 </td>
+<td> + Flask, Flask-Login</td>
+<td> Multi-page Flask app with embeded Dash Apps and added authentication system </td>
+</tr>
+<tr>
+<td> v2.1 </td>
+<td> -</td>
+<td> v2.0 with added roled-based authentication </td>
+</tr>
+</tbody></table>
+
 ## Improvements to be implemented
 - [ ] a fully-functioning pipeline: data generator (in development) -> data cleaning app (in development)-> a Dash app.
   - [X] a production version of a fake data generator.
