@@ -48,12 +48,11 @@ def register_dashapps(app):
     register_callbacks3_1(dashapp1, dset)
     register_callbacks4_1(dashapp1, dset)
 
-    _protect_dashviews(dashapp1)
 
 # Code which creates Dash Apps protected by authorization.
 
 # Function creating role-based authorization.
-# Not used with DashApp1 which is accessible to everyone 
+# Not used with DashApp1 which is accessible to everyone
 def _protect_dashviews(dashapp, roles=()):
     for view_func in dashapp.server.view_functions:
         if view_func.startswith(dashapp.url_base_pathname):
