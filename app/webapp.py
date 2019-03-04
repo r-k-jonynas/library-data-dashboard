@@ -6,6 +6,26 @@ from app.extensions import db
 from app.forms import LoginForm
 from app.models import User
 
+# Enables role-based authentication
+from functools import wraps
+
+def requires_roles(roles):
+    def wrapper(f):
+        @wraps(f)
+        def wrapped(*args, **kwargs):
+            if current_user.is_authenticated == False:
+                flash("You have to login before you can access this site.")
+                return redirect(url_for('main.login'))
+            if current_user.role not in roles:
+                flash("Your Account doesn't have access to this site.")
+                return redirect(url_for('main.index'))
+            return f(*args, **kwargs)
+        try:
+            return wrapped
+        except Exception as e:
+            print(e)
+    return wrapper
+    
 
 server_bp = Blueprint('main', __name__)
 

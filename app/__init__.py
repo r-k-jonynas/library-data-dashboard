@@ -8,6 +8,8 @@ import pandas as pd
 
 import os.path
 
+from app.webapp import requires_roles
+
 
 def create_app():
     server = Flask(__name__)
@@ -50,12 +52,14 @@ def register_dashapps(app):
 
 # Code which creates Dash Apps protected by authorization.
 
-
-def _protect_dashviews(dashapp):
+# Function creating role-based authorization.
+# Not used with DashApp1 which is accessible to everyone 
+def _protect_dashviews(dashapp, roles=()):
     for view_func in dashapp.server.view_functions:
         if view_func.startswith(dashapp.url_base_pathname):
             dashapp.server.view_functions[view_func] = login_required(dashapp.server.view_functions[view_func])
-
+            if roles:
+                dashapp.server.view_functions[view_func] = requires_roles(roles)(dashapp.server.view_functions[view_func])
 
 def register_extensions(server):
     from app.extensions import db

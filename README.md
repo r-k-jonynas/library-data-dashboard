@@ -17,7 +17,7 @@ If you'd like to see all the production code or have any questions, send me an e
 
 ## Improvements to be implemented
 - [ ] a fully-functioning pipeline: data generator (in development) -> data cleaning app (in development)-> a Dash app.
-  - [ ] a production version of a fake data generator.
+  - [X] a production version of a fake data generator.
     - [ ] a customizable data generator (a user can enter the name / type of a building, a number of spaces within the building, names of the spaces, their maximum capacities).
     - [X] a randomized data corruption mechanism (to generate more realistic datasets).
 
@@ -27,6 +27,11 @@ If you'd like to see all the production code or have any questions, send me an e
 - [ ] Insights about the dataset, ie. metadata (displayed as a Dash Table).
 - [ ] Insights about Missing data (dynamically rendered depending upon user's selections in the Dash App).
 
-- [ ] a Contact form, which automatically sends an email to the page owner.
+- [X] Flask app wrapping the dash app (home page, login & logout views)
+  - [ ] a Contact form, which automatically sends an email to the page owner.
 
-- [ ] Improved UI.
+  - [ ] Tests
+  - [ ] CI/CD
+
+- [ ] Better UI.
+- [ ] Registration form and a third type of Dash Viz - customizable one
