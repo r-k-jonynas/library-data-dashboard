@@ -1,5 +1,8 @@
 # A web app for visualization of occupancy trends of a building with multiple spaces
 
+[![Build Status](https://travis-ci.com/r-k-jonynas/rest-api-adventures.svg?branch=master)](https://travis-ci.com/r-k-jonynas/rest-api-adventures) [![codecov](https://codecov.io/gh/r-k-jonynas/library-spc-study-reports/branch/master/graph/badge.svg?token=Yp0SAC5MJa)](https://codecov.io/gh/r-k-jonynas/library-spc-study-reports)
+
+
 This is a Dash dashboard-style web app which displays interactive visualizations of occupancy data for a building in a browser window. The app reacts to user's selections and renders appropriate graphs.
 
 This project is based upon my previous space occupancy data analysis projects for a university library.
@@ -64,7 +67,7 @@ If you'd like to see all the production code or have any questions, send me an e
   - [ ] a Contact form, which automatically sends an email to the page owner.
 
   - [ ] Tests
-  - [ ] CI/CD
+  - [X] CI/CD
 
 - [ ] Better UI.
 - [ ] Registration form and a third type of Dash Viz - customizable one

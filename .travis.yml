@@ -1,0 +1,31 @@
+sudo: false
+# Let travis know the language it needs to run
+language: python
+
+# Mention the python version in which travis will run the app
+python:
+  - "3.6"
+
+# command to install dependencies in the requirements file
+# You can also install the coverage here to avoid it being in the requirements file
+# It is important to avoid things like coverage, pep8 that are not required to run the app
+install:
+  - pip install -r requirements.txt
+  - pip install coverage
+  - pip install codecov
+
+# command to run tests
+# This is the script that enables travis to run the tests
+# There are many ways to do dependeing on how you want travis to run and get you coverage
+script:
+  - coverage run -m unittest discover -s tests/
+
+# Using codecov to get coverage
+after_success:
+  - codecov
+
+deploy:
+  - provider: heroku
+    api_key:
+      secure: ##############################
+    app: occupancydashboard
